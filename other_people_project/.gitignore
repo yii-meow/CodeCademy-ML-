@@ -1,0 +1,6 @@
+.ipynb_checkpoints/
+*.pickle
+pickles
+sup_learning_tennis.ipynb
+tennis_stats.csv
+*.db
