@@ -6,6 +6,9 @@ import re
 from sklearn import preprocessing
 
 df = pd.read_csv("profiles.csv")
+print(df.columns)
+
+print(df.head())
 
 # Mapping str values to numerical
 df["drinks_code"] = df.drinks.map({
@@ -58,4 +61,11 @@ min_max_scaler = preprocessing.MinMaxScaler()
 x_scaled = min_max_scaler.fit_transform(x)
 
 feature_data = pd.DataFrame(x_scaled,columns=feature_data.columns)
-print(feature_data)
+
+# Predict Sex with education level and income
+df["sex"] = df.sex.map({
+    "m" : 0,
+    "f" : 1
+})
+
+print(df["education"].head())
